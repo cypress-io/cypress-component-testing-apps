@@ -21,7 +21,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
-    "cypress.d.ts"
+    "src"
   ]
 }
