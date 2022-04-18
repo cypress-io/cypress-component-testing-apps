@@ -14,8 +14,6 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@cypress/react": "^5.12.4",
-    "@cypress/webpack-dev-server": "^1.8.4",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
@@ -30,7 +28,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-404447e397190ebb0f8ce0bb270ea9a806ca78c6/cypress.tgz",
     "msw": "^0.39.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
