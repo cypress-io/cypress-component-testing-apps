@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './assets/tailwind.css'
+import './assets/main.css'
 import { worker } from './mocks';
 
 // Start a mock API server to handle auth requests
