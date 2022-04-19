@@ -10,6 +10,7 @@
   "dependencies": {
     "autoprefixer": "^10",
     "core-js": "^3.8.3",
+    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/zachw/add-dev-server-deps-8a9ad6b2a49d468787b38989bd07fa11ef77b336/cypress.tgz",
     "msw": "^0.39.2",
     "postcss": "^8",
     "tailwindcss": "^3",
