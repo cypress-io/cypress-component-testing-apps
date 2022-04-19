@@ -9,27 +9,20 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "eslint-plugin-cypress": "^2.12.1",
     "msw": "^0.39.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@cypress/vue": "^2.2.4",
-    "@cypress/webpack-dev-server": "^1.8.4",
     "@vue/cli-plugin-babel": "~4.5.17",
     "@vue/cli-plugin-eslint": "~4.5.17",
     "@vue/cli-service": "~4.5.17",
     "autoprefixer": "^9.8.8",
     "babel-eslint": "^10.1.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-404447e397190ebb0f8ce0bb270ea9a806ca78c6/cypress.tgz",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "html-webpack-plugin": "^4.5.2",
     "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.46.0",
-    "webpack-dev-server": "^4.8.1"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,
@@ -38,8 +31,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended",
-      "plugin:cypress/recommended"
+      "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
