@@ -21,19 +21,12 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
-    "@cypress/vue": "^2.2.4",
-    "@cypress/webpack-dev-server": "^1.8.4",
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/tailwindcss": "^5.0.2",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-404447e397190ebb0f8ce0bb270ea9a806ca78c6/cypress.tgz",
     "eslint": "^8.4.1",
-    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-nuxt": "^3.1.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "html-webpack-plugin": "^4.5.2",
-    "webpack": "^4.46.0",
-    "webpack-dev-server": "^4.8.1"
+    "eslint-plugin-vue": "^8.2.0"
   },
   "msw": {
     "workerDirectory": "static"
