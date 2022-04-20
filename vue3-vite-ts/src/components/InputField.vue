@@ -5,7 +5,7 @@
       v-bind="$attrs"
       class="p-2 text-gray-500 focus:outline-none border-2"
       :value="value"
-      @input="$emit('update:value', $event.target.value)"
+      @input="$emit('update:value', ($event.target as HTMLInputElement).value)"
     />
     <span class="text-red-500 mt-2" v-if="submitted && !value">{{
       requiredMessage
