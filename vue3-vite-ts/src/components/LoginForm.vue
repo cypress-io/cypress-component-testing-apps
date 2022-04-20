@@ -36,9 +36,13 @@ import Button from './CyButton.vue';
 import InputField from './InputField.vue';
 
 const props = defineProps<{
-  title: string;
-  errorMessage: string;
-  onLogin: (creds: { username: string; password: string }) => void;
+  title?: string;
+  errorMessage?: string;
+  // onLogin: (creds: { username: string; password: string }) => void;
+}>();
+
+const emits = defineEmits<{
+  (e: 'login', creds: { username: string; password: string }): void;
 }>();
 
 const title = computed(() => props.title || 'Log In');
@@ -48,7 +52,7 @@ const submitted = ref(false);
 
 const handleFormSubmit = () => {
   if (username.value && password.value) {
-    props.onLogin({ username: username.value, password: password.value });
+    emits('login', { username: username.value, password: password.value });
   }
   submitted.value = true;
 };
