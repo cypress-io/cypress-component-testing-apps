@@ -20,7 +20,7 @@ describe('LoginForm', () => {
   it('should render title with specified text', () => {
     const title = 'Please Authenticate';
     cy.mount(LoginForm, {
-      propsData: {
+      props: {
         title,
       },
     });
@@ -34,10 +34,10 @@ describe('LoginForm', () => {
     beforeEach(() => {
       const onLoginSpy = cy.spy().as('onLoginSpy');
       cy.mount(LoginForm, {
-        propsData: {
+        props: {
           onLogin: onLoginSpy,
         },
-      }).as('wrapper');
+      });
       cy.contains('Username').find('input').as('usernameInput');
       cy.contains('Password').find('input').as('passwordInput');
       cy.get('button').contains('Login').as('loginButton');

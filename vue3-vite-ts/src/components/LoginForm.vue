@@ -38,7 +38,6 @@ import InputField from './InputField.vue';
 const props = defineProps<{
   title?: string;
   errorMessage?: string;
-  // onLogin: (creds: { username: string; password: string }) => void;
 }>();
 
 const emits = defineEmits<{
