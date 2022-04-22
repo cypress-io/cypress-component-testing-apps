@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.5",
     "core-js": "^3.22.2",
+    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-c110aa19412ca42c6f83fd87acca81729f955af9/cypress.tgz",
     "msw": "^0.39.2",
     "vue": "^3.2.33",
     "vue-loader": "^17.0.0",
