@@ -1,0 +1,45 @@
+{
+  "name": "vue3-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.22.2",
+    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-c110aa19412ca42c6f83fd87acca81729f955af9/cypress.tgz",
+    "msw": "^0.39.2",
+    "vue": "^3.2.33",
+    "vue-loader": "^17.0.0",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.24",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
