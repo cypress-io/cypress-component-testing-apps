@@ -7,7 +7,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^7.1.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/zachw/add-dev-server-deps-8a9ad6b2a49d468787b38989bd07fa11ef77b336/cypress.tgz",
+    "cypress": "^10.0.0",
     "install": "^0.13.0",
     "msw": "^0.39.2",
     "npm": "^8.7.0",

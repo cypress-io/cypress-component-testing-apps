@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/win32-x64/zachw/add-dev-server-deps-8a9ad6b2a49d468787b38989bd07fa11ef77b336/cypress.tgz",
+    "cypress": "^10.0.0",
     "msw": "^0.39.2",
     "vue": "^2.6.11"
   },

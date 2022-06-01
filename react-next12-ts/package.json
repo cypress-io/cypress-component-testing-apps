@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "cypress": "https://cdn.cypress.io/beta/npm/10.0.0/darwin-x64/10.0-release-d6924ea428be880ee728d47c56ef19ffdb67f676/cypress.tgz",
+    "cypress": "^10.0.0",
     "msw": "^0.39.2",
     "next": "12.1.5",
     "react": "18.0.0",
