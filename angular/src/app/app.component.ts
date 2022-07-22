@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { tap, filter, map } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { tap, filter, map, catchError } from 'rxjs/operators';
 import { LoginService } from './login.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuthed = true
+  isAuthed = false
   errorMessage = '';
   username = ''
 
@@ -23,7 +24,7 @@ export class AppComponent {
       filter(username => !!username),
       map(username => this.username = username),
       map(() => this.isAuthed = true),
-      // catchError((err) => this.isAuthed = false)
+      catchError((err) => of(this.isAuthed = false))
     )
   }
 
