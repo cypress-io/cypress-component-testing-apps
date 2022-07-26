@@ -19,8 +19,6 @@ export class LoginFormComponent {
       return;
     }
 
-    console.log(this.username)
-    console.log(this.password)
     this.submitted = true;
     this.onLogin.emit({ username: this.username, password: this.password })
   }

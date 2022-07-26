@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { of } from 'rxjs';
-import { tap, filter, map, catchError } from 'rxjs/operators';
+import { take, filter, map, catchError } from 'rxjs/operators';
 import { LoginService } from './login.service';
 
 @Component({
@@ -16,16 +16,18 @@ export class AppComponent {
   constructor(private readonly loginService: LoginService) {}
 
   handleLogin(username: string, password: string): void {
-    console.log('handleLogin')
     this.errorMessage = '';
 
     this.loginService.login(username, password).pipe(
-      tap(console.log),
-      filter(username => !!username),
-      map(username => this.username = username),
-      map(() => this.isAuthed = true),
-      catchError((err) => of(this.isAuthed = false))
-    )
+      take(1),
+    ).subscribe((response) => {
+      if (response.status === 200) {
+        this.isAuthed = true
+        this.username = username
+      } else {
+        this.errorMessage = response.message
+      }
+    })
   }
 
   logout(): void {
