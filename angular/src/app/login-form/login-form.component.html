@@ -9,7 +9,7 @@
             </label>
             <label class="flex flex-col text-lg text-gray-800 mb-2">
                 Password
-                <input name="password" [(ngModel)]="password" class="p-2 text-gray-500 focus:outline-none border-2" autocomplete="current-password" />
+                <input type="password" name="password" [(ngModel)]="password" class="p-2 text-gray-500 focus:outline-none border-2" autocomplete="current-password" />
                 <span *ngIf="submitted && !password" class="text-red-500 mt-2">Password is required</span>
             </label>
             <app-button type="submit">Login</app-button>

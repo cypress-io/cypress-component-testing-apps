@@ -15,11 +15,12 @@ export class LoginFormComponent {
 
 
   handleFormSubmit(): void {
+    this.submitted = true;
+    
     if (!this.username || !this.password) {
       return;
     }
 
-    this.submitted = true;
     this.onLogin.emit({ username: this.username, password: this.password })
   }
 }

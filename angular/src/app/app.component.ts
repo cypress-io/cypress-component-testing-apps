@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { of } from 'rxjs';
-import { take, filter, map, catchError } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { LoginService } from './login.service';
 
 @Component({
