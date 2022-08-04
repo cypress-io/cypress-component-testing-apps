@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.4.0/darwin-x64/angular-mount-814791bdff014393cf35521a3be606cd497b49dc/cypress.tgz",
+    "cypress": "https://cdn.cypress.io/beta/npm/10.4.0/darwin-x64/zachw/angular-ct-teardown-beb082402eccd254ac49c7b6b24d8e610ad80557/cypress.tgz",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -27,6 +27,7 @@
     "@angular-devkit/build-angular": "^14.0.0",
     "@angular/cli": "~14.0.0",
     "@angular/compiler-cli": "^14.0.0",
+    "@cypress/mount-utils": "^2.0.0",
     "@types/jasmine": "~4.0.0",
     "autoprefixer": "^10.4.7",
     "jasmine-core": "~4.1.0",

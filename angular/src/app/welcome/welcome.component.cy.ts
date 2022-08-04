@@ -1,16 +1,15 @@
-import { Component, EventEmitter } from "@angular/core"
-import { TestBedConfig } from "cypress/angular"
+import { MountConfig } from "cypress/angular"
 import { ButtonComponent } from "../button/button.component"
 import { WelcomeComponent } from "./welcome.component"
 
 describe('WelcomeComponent', () => {
-    const config: TestBedConfig<WelcomeComponent> = {
+    const config: MountConfig<WelcomeComponent> = {
         declarations: [ButtonComponent],
     }
     it('should mount with greeting', () => {
         cy.mount(WelcomeComponent, {
             ...config,
-            inputs: {
+            componentProperties: {
                 username: 'Test User'
             },
         }).then(response => {
@@ -19,11 +18,12 @@ describe('WelcomeComponent', () => {
         cy.contains('Welcome Test User')
     })
 
-    it('when the log out button is clicked, onLogout should be called', () => {
-        cy.mount(WelcomeComponent, config).then(response => {
-            cy.spy(response.component.onLogout, 'emit').as('onLogout')
+    it('when the log out button is clicked, onLogout should be called using autoSpyOutputs', () => {
+        cy.mount(WelcomeComponent, {
+            ...config,
+            autoSpyOutputs: true
         })
         cy.get('button').contains('Log Out').click()
-        cy.get('@onLogout').should('have.been.called')
+        cy.get('@onLogoutSpy').should('have.been.called')
     })
 })

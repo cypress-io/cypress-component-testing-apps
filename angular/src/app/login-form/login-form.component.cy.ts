@@ -1,12 +1,12 @@
 import { EventEmitter } from "@angular/core"
 import { FormsModule } from "@angular/forms"
-import { TestBedConfig } from "cypress/angular"
+import { MountConfig } from "cypress/angular"
 import { ButtonComponent } from "../button/button.component"
 import { LoginService } from "../login.service"
 import { LoginFormComponent } from "./login-form.component"
 
 describe('LoginFormComponent', () => {
-    const config: TestBedConfig<LoginFormComponent> = {
+    const config: MountConfig<LoginFormComponent> = {
         imports: [FormsModule],
         declarations: [ButtonComponent],
         providers: [LoginService]
