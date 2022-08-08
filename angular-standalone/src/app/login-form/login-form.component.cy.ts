@@ -8,7 +8,6 @@ import { LoginFormComponent } from "./login-form.component"
 describe('LoginFormComponent', () => {
     const config: MountConfig<LoginFormComponent> = {
         imports: [FormsModule],
-        declarations: [ButtonComponent],
         providers: [LoginService]
     } 
     it('can mount', () => {

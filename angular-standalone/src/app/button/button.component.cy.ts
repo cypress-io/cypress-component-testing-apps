@@ -13,14 +13,14 @@ class WrapperComponent {}
 describe('ButtonComponent', () => {
     it('can mount using WrapperComponent', () => {
         cy.mount(WrapperComponent, {
-            declarations: [ButtonComponent],
+            imports: [ButtonComponent],
         })
         cy.get('button').contains('Click Me')
     })
 
     it('can mount using template syntax', () => {
         cy.mount('<app-button>Click Me</app-button>', {
-            declarations: [ButtonComponent],
+            imports: [ButtonComponent],
         })
         cy.get('button').contains('Click Me')
     })

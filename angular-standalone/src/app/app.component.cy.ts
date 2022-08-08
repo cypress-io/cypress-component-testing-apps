@@ -9,7 +9,7 @@ import { WelcomeComponent } from "./welcome/welcome.component"
 
 describe('AppComponent', () => {
     const config: MountConfig<AppComponent> = {
-        imports: [FormsModule, HttpClientModule], providers: [LoginService], declarations: [LoginFormComponent, ButtonComponent, WelcomeComponent]
+        imports: [FormsModule, HttpClientModule, LoginFormComponent, ButtonComponent, WelcomeComponent], providers: [LoginService],
     }
     it('should redirect to welcome screen when creds are correct', () => {
         cy.mount(AppComponent, config)
