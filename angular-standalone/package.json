@@ -28,7 +28,7 @@
     "@angular/compiler-cli": "^14.0.0",
     "@cypress/mount-utils": "^2.0.0",
     "@types/jasmine": "~4.0.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.4.0/darwin-x64/develop-d201b37b3d6b1e37a15a8d21d853acca47bfc666/cypress.tgz",
+    "cypress": "^10.5.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
