@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { catchError, filter, map } from 'rxjs/operators';
 import { Observable, of, throwError } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class LoginService {
   constructor(private readonly http: HttpClient) { }
 

@@ -1,6 +1,7 @@
 import { HttpClientModule } from "@angular/common/http"
 import { FormsModule } from "@angular/forms"
 import { MountConfig } from "cypress/angular"
+import { of } from "rxjs"
 import { AppComponent } from "./app.component"
 import { ButtonComponent } from "./button/button.component"
 import { LoginFormComponent } from "./login-form/login-form.component"
@@ -39,5 +40,23 @@ describe('AppComponent', () => {
         })
         cy.get('button').contains('Login').click()
         cy.contains('Bad username or password')
+    })
+
+    it('can override the provider at the component level', () => {
+        cy.mount(AppComponent, {
+            ...config,
+            providers: [{
+                provide: LoginService,
+                useValue: {
+                    login(username = 'test', password = '123') {
+                        return of({ message: 'My Custom Message', status: 400 })
+                    }
+                } as LoginService
+            }]
+        })
+        cy.contains('Username').find('input').type('baduser')
+        cy.contains('Password').find('input').type('badpassword')
+        cy.get('button').contains('Login').click()
+        cy.contains('My Custom Message')
     })
 })

@@ -6,6 +6,7 @@ import { ButtonComponent } from "./button/button.component"
 import { LoginFormComponent } from "./login-form/login-form.component"
 import { LoginService } from "./login.service"
 import { WelcomeComponent } from "./welcome/welcome.component"
+import { of } from 'rxjs'
 
 describe('AppComponent', () => {
     const config: MountConfig<AppComponent> = {
@@ -39,5 +40,23 @@ describe('AppComponent', () => {
         })
         cy.get('button').contains('Login').click()
         cy.contains('Bad username or password')
+    })
+
+    it('can override the provider at the component level', () => {
+        cy.mount(AppComponent, {
+            ...config,
+            providers: [{
+                provide: LoginService,
+                useValue: {
+                    login(username = 'test', password = '123') {
+                        return of({ message: 'My Custom Message', status: 400 })
+                    }
+                } as LoginService
+            }]
+        })
+        cy.contains('Username').find('input').type('baduser')
+        cy.contains('Password').find('input').type('badpassword')
+        cy.get('button').contains('Login').click()
+        cy.contains('My Custom Message')
     })
 })
