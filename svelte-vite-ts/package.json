@@ -13,7 +13,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.2",
     "@tsconfig/svelte": "^2.0.1",
     "autoprefixer": "^10.4.4",
-    "cypress": "file:../../cypress/cli",
+    "cypress": "10.7.0",
     "postcss": "^8.4.12",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
