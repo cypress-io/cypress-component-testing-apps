@@ -1,0 +1,19 @@
+{
+  "name": "cypress-component-testing-apps",
+  "version": "1.0.0",
+  "description": "This repo contains several examples of the [Cypress Component Testing Getting Started app](https://docs.cypress.io/guides/component-testing/writing-your-first-component-test) in various frameworks and libraries.",
+  "main": "index.js",
+  "scripts": {
+    "install-latest-cypress": "node ./scripts/update-all.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypress-io/cypress-component-testing-apps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cypress-io/cypress-component-testing-apps/issues"
+  },
+  "homepage": "https://github.com/cypress-io/cypress-component-testing-apps#readme"
+}

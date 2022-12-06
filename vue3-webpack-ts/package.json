@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run": "cypress run"
   },
   "author": "",
   "license": "ISC",
