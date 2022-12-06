@@ -4,7 +4,8 @@
   "description": "This repo contains several examples of the [Cypress Component Testing Getting Started app](https://docs.cypress.io/guides/component-testing/writing-your-first-component-test) in various frameworks and libraries.",
   "main": "index.js",
   "scripts": {
-    "install-latest-cypress": "node ./scripts/update-all.mjs"
+    "install-latest-cypress": "./.scripts/update-all.sh",
+    "cypress:run": "./.scripts/run-all-tests.sh"
   },
   "repository": {
     "type": "git",

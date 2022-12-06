@@ -10,11 +10,11 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "lintfix": "npm run lint:js -- --fix",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run --config video=false --component"
   },
   "dependencies": {
     "core-js": "^3.19.3",
-    "cypress": "^10.0.0",
+    "cypress": "^12.0.0",
     "msw": "^0.39.2",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",

@@ -7,7 +7,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^7.1.0",
-    "cypress": "^10.0.0",
+    "cypress": "^12.0.0",
     "install": "^0.13.0",
     "msw": "^0.39.2",
     "npm": "^8.7.0",
@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "compile:css": "tailwindcss -i src/tailwind.css -o src/index.css",
     "compile:css:watch": "tailwindcss -i src/tailwind.css -o src/index.css --watch",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run --config video=false --component"
   },
   "eslintConfig": {
     "extends": [

@@ -5,14 +5,14 @@
     "dev": "webpack serve",
     "start": "serve public --listen 8080",
     "validate": "svelte-check",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run --config video=false --component"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
-    "cypress": "10.7.0",
+    "cypress": "^12.0.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.16",
     "postcss-loader": "^7.0.1",

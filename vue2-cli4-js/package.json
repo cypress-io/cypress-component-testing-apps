@@ -6,11 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run --config video=false --component"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "cypress": "^10.0.0",
+    "cypress": "^12.0.0",
     "msw": "^0.39.2",
     "vue": "^2.6.11"
   },
