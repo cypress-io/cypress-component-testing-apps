@@ -2,7 +2,7 @@ import App from './index';
 
 describe('LoginForm', () => {
   it('should redirect to welcome screen when creds are correct', () => {
-   cy.mount(<App />);
+    cy.mount(<App />);
     cy.contains('Username').find('input').type('testuser');
     cy.contains('Password').find('input').type('testpassword');
     cy.intercept('POST', '/auth', {
