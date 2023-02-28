@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import LoginForm from '../components/LoginForm';
-import Welcome from '../components/Welcome';
+import LoginForm from '@components/LoginForm';
+import Welcome from '@components/Welcome';
 
 const Home: NextPage = () => {
   const [isAuthed, setIsAuthed] = useState(false);

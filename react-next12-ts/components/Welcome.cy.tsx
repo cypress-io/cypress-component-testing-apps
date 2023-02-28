@@ -1,4 +1,4 @@
-import Welcome from './Welcome';
+import Welcome from '@components/Welcome';
 
 describe('Welcome', () => {
   it('should mount with greeting', () => {

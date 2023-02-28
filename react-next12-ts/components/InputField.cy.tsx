@@ -1,4 +1,4 @@
-import InputField from './InputField';
+import InputField from '@components/InputField';
 
 describe('InputField', () => {
   it('should mount with label', () => {

@@ -1,4 +1,4 @@
-import LoginForm from './LoginForm';
+import LoginForm from '@components/LoginForm';
 
 describe('LoginForm', () => {
   it('should mount the component', () => {
