@@ -1,5 +1,3 @@
-import { MountConfig } from "cypress/angular"
-import { ButtonComponent } from "../button/button.component"
 import { WelcomeComponent } from "./welcome.component"
 
 describe('WelcomeComponent', () => {

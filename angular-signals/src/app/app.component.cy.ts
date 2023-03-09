@@ -1,18 +1,8 @@
-import { HttpClientModule } from "@angular/common/http"
-import { FormsModule } from "@angular/forms"
-import { MountConfig } from "cypress/angular"
 import { AppComponent } from "./app.component"
-import { ButtonComponent } from "./button/button.component"
-import { LoginFormComponent } from "./login-form/login-form.component"
-import { LoginService } from "./login.service"
-import { WelcomeComponent } from "./welcome/welcome.component"
 
 describe('AppComponent', () => {
-    const config: MountConfig<AppComponent> = {
-        imports: [FormsModule, HttpClientModule, LoginFormComponent, ButtonComponent, WelcomeComponent], providers: [LoginService],
-    }
     it('should redirect to welcome screen when creds are correct', () => {
-        cy.mount(AppComponent, config)
+        cy.mount(AppComponent)
         cy.contains('Username').find('input').type('testuser')
         cy.contains('Password').find('input').type('testPassword')
         cy.intercept('POST', '/auth', {
@@ -27,7 +17,7 @@ describe('AppComponent', () => {
     })
 
     it('should show error message when creds are incorrect', () => {
-        cy.mount(AppComponent, config)
+        cy.mount(AppComponent)
         cy.contains('Username').find('input').type('baduser')
         cy.contains('Password').find('input').type('badpassword')
         cy.intercept('POST', '/auth', {
