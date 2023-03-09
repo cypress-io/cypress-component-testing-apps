@@ -6,21 +6,17 @@ import { LoginService } from "../login.service"
 import { LoginFormComponent } from "./login-form.component"
 
 describe('LoginFormComponent', () => {
-    const config: MountConfig<LoginFormComponent> = {
-        imports: [FormsModule],
-        providers: [LoginService]
-    } 
     it('can mount', () => {
-        cy.mount(LoginFormComponent, config)
+        cy.mount(LoginFormComponent)
     })
 
     it('should have password input of type password', () => {
-        cy.mount(LoginFormComponent, config);
+        cy.mount(LoginFormComponent);
         cy.contains('Password').find('input').should('have.attr', 'type', 'password')
     })
 
     it('should render title with default text', () => {
-        cy.mount(LoginFormComponent, config)
+        cy.mount(LoginFormComponent)
         cy.get('legend').should('have.text', 'Log In')
     })
 
@@ -29,7 +25,7 @@ describe('LoginFormComponent', () => {
         const password = 's3cret';
 
         beforeEach(() => {
-            cy.mount(LoginFormComponent, config).then(response => {
+            cy.mount(LoginFormComponent).then(response => {
                 cy.spy(response.component.onLogin, 'emit').as('onLoginSpy')
             })
             cy.contains('Username').find('input').as('usernameInput');

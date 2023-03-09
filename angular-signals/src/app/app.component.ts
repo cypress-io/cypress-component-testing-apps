@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginService } from './login.service';
@@ -15,29 +15,28 @@ import { WelcomeComponent } from './welcome/welcome.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuthed = false
-  errorMessage = '';
-  username = ''
+  isAuthed = signal(false)
+  errorMessage = signal('');
+  username = signal('')
 
-  constructor(private readonly loginService: LoginService) {}
+  private readonly _loginService = inject(LoginService);
 
   handleLogin(username: string, password: string): void {
-    this.errorMessage = '';
+    this.errorMessage.set('')
 
-    this.loginService.login(username, password).pipe(
+    this._loginService.login(username, password).pipe(
       take(1),
-    ).subscribe((response) => {
+    ).subscribe(response => {
       if (response.status === 200) {
-        this.isAuthed = true
-        this.username = username
+        this.isAuthed.set(true)
+        this.username.set(username)
       } else {
-        this.errorMessage = response.message
+        this.errorMessage.set(response.message)
       }
     })
   }
 
   logout(): void {
-    console.log('logout');
-    this.isAuthed = false;
+    this.isAuthed.set(false)
   }
 }
