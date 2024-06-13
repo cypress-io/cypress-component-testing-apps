@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+
 import { Component } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -8,7 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 @Component({
   standalone: true,
-  imports: [WelcomeComponent, LoginFormComponent, HttpClientModule, CommonModule],
+  imports: [WelcomeComponent, LoginFormComponent],
   providers: [LoginService],
   selector: 'app-root',
   templateUrl: './app.component.html',

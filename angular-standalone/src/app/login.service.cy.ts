@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { firstValueFrom } from 'rxjs';
 import { LoginService } from './login.service';
@@ -7,8 +7,10 @@ describe('LoginService', () => {
   it('should return a user if logged in', () => {
     cy.intercept('POST', '/auth', {}).then(async () => {
       TestBed.configureTestingModule({
-        providers: [LoginService],
-        imports: [HttpClientModule],
+        providers: [
+          provideHttpClient(),
+          LoginService
+        ]
       });
 
       const loginService = TestBed.inject(LoginService);
@@ -25,8 +27,10 @@ describe('LoginService', () => {
 
   it('should error if 404', async () => {
     TestBed.configureTestingModule({
-      providers: [LoginService],
-      imports: [HttpClientModule],
+      providers: [
+        provideHttpClient(),
+        LoginService
+      ]
     });
 
     const loginService = TestBed.inject(LoginService);
@@ -42,8 +46,10 @@ describe('LoginService', () => {
   it('should error if 401 bad credentials', () => {
     cy.intercept('POST', '/auth', { statusCode: 401 }).then(async () => {
       TestBed.configureTestingModule({
-        providers: [LoginService],
-        imports: [HttpClientModule],
+        providers: [
+          provideHttpClient(),
+          LoginService
+        ]
       });
 
       const loginService = TestBed.inject(LoginService);
