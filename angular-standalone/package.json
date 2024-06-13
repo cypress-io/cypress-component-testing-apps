@@ -29,7 +29,7 @@
     "@angular/cli": "^18.0.2",
     "@angular/compiler-cli": "^18.0.0",
     "@types/jasmine": "~5.1.0",
-    "cypress": "^13.10.0",
+    "cypress": "https://cdn.cypress.io/beta/npm/13.12.0/darwin-arm64/angular-signals-ct-harness-c6cba8b03a7d7d098cdb469919eb674d40277604/cypress.tgz",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
