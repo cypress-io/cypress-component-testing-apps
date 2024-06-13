@@ -1,8 +1,11 @@
+import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   it('should redirect to welcome screen when creds are correct', () => {
-    cy.mount(AppComponent);
+    cy.mount(AppComponent, {
+      providers: [provideHttpClient()],
+    });
     cy.contains('Username').find('input').type('testuser');
     cy.contains('Password').find('input').type('testPassword');
     cy.intercept('POST', '/auth', {
@@ -17,7 +20,9 @@ describe('AppComponent', () => {
   });
 
   it('should show error message when creds are incorrect', () => {
-    cy.mount(AppComponent);
+    cy.mount(AppComponent, {
+      providers: [provideHttpClient()],
+    });
     cy.contains('Username').find('input').type('baduser');
     cy.contains('Password').find('input').type('badpassword');
     cy.intercept('POST', '/auth', {

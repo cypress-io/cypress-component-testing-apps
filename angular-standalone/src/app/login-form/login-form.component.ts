@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
-import { LoginService } from '../login.service';
 
 @Component({
   standalone: true,
-  imports: [FormsModule, ButtonComponent, CommonModule],
+  imports: [FormsModule, ButtonComponent],
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
