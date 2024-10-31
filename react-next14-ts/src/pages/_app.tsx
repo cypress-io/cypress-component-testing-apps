@@ -5,9 +5,13 @@ import { workerSetup, serverSetup } from './mocks';
 // Start a mock API server to handle auth requests
 // only in browser though
 if (typeof window === 'undefined') {
-  serverSetup().listen();
+  serverSetup().then((worker) => {
+    worker?.listen();
+  })
 } else {
-  workerSetup().start();
+  workerSetup().then((worker) => {
+    worker?.start();
+  })
 }
 
 export default function App({ Component, pageProps }: AppProps) {
