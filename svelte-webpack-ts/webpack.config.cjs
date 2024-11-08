@@ -1,17 +1,15 @@
-import type { Configuration } from "webpack";
-import type { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import path from "path";
-import sveltePreprocess from "svelte-preprocess";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
+const sveltePreprocess = require("svelte-preprocess");
 
-const config: Configuration & WebpackDevServerConfiguration = {
+module.exports = {
   mode: "development",
   entry: {
     bundle: ["./src/main.ts"],
   },
   resolve: {
     alias: {
-      svelte: path.dirname(require.resolve("svelte/package.json")),
+      svelte: path.resolve('node_modules', 'svelte/src/runtime'),
     },
     extensions: [".mjs", ".js", ".ts", ".svelte"],
     mainFields: ["svelte", "browser", "module", "main"],
@@ -83,5 +81,3 @@ const config: Configuration & WebpackDevServerConfiguration = {
   ],
   devtool: "source-map",
 };
-
-export default config;
