@@ -1,10 +1,10 @@
-const { VueLoaderPlugin } = require('vue-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   entry: {
-    main: './src/main.ts',
+    main: path.resolve(__dirname, './src/main.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -49,8 +49,5 @@ module.exports = {
   // },
   resolve: {
     extensions: ['.ts', '.js', '.vue'],
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
   },
-};
+}
