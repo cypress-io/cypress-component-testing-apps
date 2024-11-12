@@ -2,7 +2,7 @@
   export let label: string;
   export let submitted: boolean;
   export let requiredMessage: string;
-  export let value: string;
+  export let value: string | undefined = undefined;
 
   function handleInput(e: any) {
     value = e.target.value;
