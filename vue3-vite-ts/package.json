@@ -6,23 +6,25 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "cypress:run": "cypress run --config video=false --component"
+    "cypress:run": "cypress run --component"
   },
   "dependencies": {
-    "msw": "^0.39.2",
-    "vue": "^3.2.25"
+    "msw": "^2.6.0",
+    "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.1",
-    "autoprefixer": "^10.4.4",
-    "cypress": "^12.7.0",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.2",
-    "vue-tsc": "^0.34.7"
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "cypress": "^13.15.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.10"
   },
   "msw": {
-    "workerDirectory": ""
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
