@@ -3,6 +3,7 @@ import { ButtonComponent } from './button.component';
 
 @Component({
   template: ` <app-button> Click Me </app-button> `,
+  standalone: false,
 })
 class WrapperComponent {}
 
