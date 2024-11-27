@@ -13,13 +13,13 @@
     "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "cypress": "^13.15.1",
+    "cypress": "https://cdn.cypress.io/beta/npm/13.15.2/darwin-arm64/feat/support_vite_6-4cc6dd61609e9d9f1fcd42ec1573ea79feda602a/cypress.tgz",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10",
+    "vite": "^6.0.0",
     "vue-tsc": "^2.1.10"
   },
   "msw": {
