@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  standalone: true,
   imports: [ButtonComponent],
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',

@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let type: string = "button";
+  import type { HTMLButtonAttributes } from "svelte/elements";
+
+  export let type: HTMLButtonAttributes["type"] = "button";
   export let msg: string;
 </script>
 

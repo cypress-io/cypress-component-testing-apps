@@ -6,7 +6,7 @@
   const dispatch = createEventDispatcher();
 
   export let title = "Log In";
-  export let errorMessage: string;
+  export let errorMessage: string | undefined = undefined;
 
   let username = "";
   let password = "";
