@@ -1,8 +1,16 @@
 <script lang="ts">
-  export let label: string;
-  export let submitted: boolean;
-  export let requiredMessage: string;
-  export let value: string | undefined = undefined;
+  let { 
+    label, 
+    submitted, 
+    requiredMessage, 
+    value = $bindable(), 
+    ...restProps
+  }: {
+    label: string
+    submitted: boolean
+    requiredMessage: string
+    value?: string
+  } = $props()
 
   function handleInput(e: any) {
     value = e.target.value;
@@ -12,10 +20,10 @@
 <label class="flex flex-col text-lg text-gray-800 mb-2">
   {label}:
   <input
-    {...$$restProps}
+    {...restProps}
     {value}
     class="p-2 text-gray-500 focus:outline-none border-2"
-    on:input={handleInput}
+    oninput={handleInput}
   />
   {#if submitted && !value}
     <span class="text-red-500 mt-2">

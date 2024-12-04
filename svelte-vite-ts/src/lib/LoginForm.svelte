@@ -1,32 +1,38 @@
 <script lang="ts">
   import Button from "./Button.svelte";
   import InputField from "./InputField.svelte";
-  import { createEventDispatcher } from "svelte";
 
-  const dispatch = createEventDispatcher();
-
-  export let title = "Log In";
-  export let errorMessage: string;
-
-  let username = "";
-  let password = "";
-  let submitted = false;
+  let {
+    title = "Log In",
+    errorMessage = undefined,
+    username = "",
+    password = "",
+    submitted = false,
+    onLogin = () => undefined
+  }: {
+    title?: string
+    errorMessage?: string | undefined
+    username?: string
+    password?: string
+    submitted?: boolean
+    onLogin?: ({username, password}: { username: string, password: string}) =>void
+  } = $props()
 
   function handleFormSubmit(event: SubmitEvent) {
     event.preventDefault();
     submitted = true;
 
     if (username && password) {
-      dispatch("login", {
+      onLogin({
         username,
-        password,
-      });
+        password
+      })
     }
   }
 </script>
 
 <div class="max-w-screen-sm p-12 mx-auto bg-gray-50 rounded-md shadow-lg">
-  <form on:submit={handleFormSubmit} class="flex flex-col">
+  <form onsubmit={handleFormSubmit} class="flex flex-col">
     <fieldset>
       <legend class="text-3xl text-gray-800 mb-4">{title}</legend>
       <InputField
@@ -47,7 +53,7 @@
         {submitted}
         bind:value={password}
       />
-      <Button type="submit" msg="Login" />
+      <Button type="submit" msg="Login"/>
       {#if errorMessage}
         <div class="text-red-500 mt-2">
           {errorMessage}
