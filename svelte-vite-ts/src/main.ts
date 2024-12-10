@@ -1,8 +1,16 @@
-import App from "./App.svelte";
-import "./assets/main.css";
+import App from './App.svelte'
+import "./assets/main.css"
+import { mount } from 'svelte'
 
-const app = new App({
-  target: document.getElementById("app"),
+import { worker } from './mocks'
+
+// Start a mock API server to handle auth requests
+worker.start({
+  onUnhandledRequest: 'bypass'
 });
 
-export default app;
+const app = mount(App, {
+  target: document.body,
+})
+
+export default app

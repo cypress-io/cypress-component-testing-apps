@@ -1,5 +1,15 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "cypress/**/*.ts"],
-  "exclude": ["node_modules/*"]
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "types": ["cypress"] 
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "cypress.d.ts"],
 }

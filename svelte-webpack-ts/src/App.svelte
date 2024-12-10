@@ -1,13 +1,18 @@
 <script lang="ts">
   import LoginForm from "./lib/LoginForm.svelte";
   import Welcome from "./lib/Welcome.svelte";
-  let isAuthed = false;
-  let errorMessage: string = "";
-  let username: string;
 
-  async function handleLogin({
-    detail,
-  }: CustomEvent<{ username: string; password: string }>) {
+  let { 
+    isAuthed = false, 
+    errorMessage= "", 
+    username 
+  }: {
+    isAuthed: boolean
+    errorMessage: string
+    username: string
+  } = $props()
+
+  async function handleLogin(detail: {username: string, password: string} ) {
     try {
       errorMessage = "";
       const res = await fetch("/auth", {
@@ -39,7 +44,7 @@
 </script>
 
 {#if !isAuthed}
-  <LoginForm {errorMessage} on:login={handleLogin} />
+  <LoginForm {errorMessage} onLogin={handleLogin} />
 {:else}
-  <Welcome {username} on:logout={handleLogout} />
+  <Welcome {username} onLogout={handleLogout} />
 {/if}

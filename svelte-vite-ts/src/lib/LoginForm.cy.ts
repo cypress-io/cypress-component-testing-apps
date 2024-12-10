@@ -33,9 +33,11 @@ describe("LoginForm", () => {
 
     beforeEach(() => {
       const onLoginSpy = cy.spy().as("onLoginSpy");
-      cy.mount(LoginForm).then(({ component }) => {
-        component.$on("login", onLoginSpy);
-      });
+      cy.mount(LoginForm, {
+        props: {
+          onLogin: onLoginSpy
+        }
+      })
       cy.contains("Username").find("input").as("usernameInput");
       cy.contains("Password").find("input").as("passwordInput");
       cy.get("button").contains("Login").as("loginButton");
@@ -46,10 +48,8 @@ describe("LoginForm", () => {
       cy.get("@passwordInput").type(password);
       cy.get("@loginButton").click();
       cy.get("@onLoginSpy").should("have.been.calledWithMatch", {
-        detail: {
           username,
           password,
-        },
       });
     });
 
@@ -57,10 +57,8 @@ describe("LoginForm", () => {
       cy.get("@usernameInput").type(username);
       cy.get("@passwordInput").type(password).type("{enter}");
       cy.get("@onLoginSpy").should("have.been.calledWithMatch", {
-        detail: {
-          username,
-          password,
-        },
+        username,
+        password,
       });
     });
 

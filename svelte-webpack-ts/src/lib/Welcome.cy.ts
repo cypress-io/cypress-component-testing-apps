@@ -14,10 +14,9 @@ describe("Welcome", () => {
     cy.mount(Welcome, {
       props: {
         username: "Test User",
+        onLogout: cy.spy().as("logoutSpy")
       },
-    }).then(({ component }) => {
-      component.$on("logout", cy.spy().as("logoutSpy"));
-    });
+    })
 
     cy.get("button").contains("Log Out").click();
     cy.get("@logoutSpy").should("have.been.called");

@@ -7,7 +7,6 @@ import { LoginService } from './login.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 @Component({
-  standalone: true,
   imports: [WelcomeComponent, LoginFormComponent, HttpClientModule, CommonModule],
   providers: [LoginService],
   selector: 'app-root',

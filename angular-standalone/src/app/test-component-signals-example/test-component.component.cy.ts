@@ -1,6 +1,6 @@
 import { signal } from '@angular/core';
 import { TestComponent } from './test-component.component';
-import { createOutputSpy } from 'cypress/angular-signals';
+import { createOutputSpy } from 'cypress/angular';
 
 describe('TestComponent', () => {
   it('works with inferred generic type input<required>', () => {
