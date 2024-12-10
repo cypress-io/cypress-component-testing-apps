@@ -8,11 +8,8 @@ module.exports = {
     bundle: ["./src/main.ts"],
   },
   resolve: {
-    alias: {
-      svelte: path.resolve('node_modules', 'svelte/src/runtime'),
-    },
     extensions: [".mjs", ".js", ".ts", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"],
+    // mainFields: ["svelte", "browser", "module", "main"],
   },
   output: {
     path: path.resolve(__dirname, "public/build"),
@@ -22,9 +19,16 @@ module.exports = {
   },
   module: {
     rules: [
-      // Rule: Svelte
       {
-        test: /\.svelte$/,
+        test: /\.svelte\.ts$/,
+        use: [ "svelte-loader", "ts-loader"],
+      },
+      {
+        test: /(?<!\.svelte)\.ts$/,
+        loader: "ts-loader",
+      },
+      {
+        test: /\.(svelte|svelte\.js)$/,
         use: {
           loader: "svelte-loader",
           options: {
@@ -39,19 +43,14 @@ module.exports = {
               noPreserveState: false,
               optimistic: true,
             },
-            preprocess: sveltePreprocess({
-              postcss: true,
-            }),
           },
-        },
+        }
       },
-      // Required to prevent errors from Svelte on Webpack 5+, omit on Webpack 4
-      // See: https://github.com/sveltejs/svelte-loader#usage
       {
         test: /node_modules\/svelte\/.*\.mjs$/,
         resolve: {
-          fullySpecified: false,
-        },
+          fullySpecified: false
+        }
       },
       {
         test: /\.css$/,
