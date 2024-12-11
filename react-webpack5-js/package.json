@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:run": "cypress run --config --component"
+    "cypress:run": "cypress run --component"
   },
   "author": "",
   "license": "ISC",
