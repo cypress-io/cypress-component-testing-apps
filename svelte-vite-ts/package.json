@@ -14,7 +14,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tsconfig/svelte": "^5.0.4",
     "autoprefixer": "^10.4.20",
-    "cypress": "https://cdn.cypress.io/beta/npm/13.16.1/darwin-arm64/feat/support_svelte_5-fe87cdeb0bda14ba83786d31cb9863f308be3ae1/cypress.tgz",
+    "cypress": "https://cdn.cypress.io/beta/npm/14.0.0/darwin-arm64/develop-61f10424edb768447b2a70b7ecc362375ad71e2d/cypress.tgz",
     "msw": "^2.6.6",
     "svelte": "^5.6.2",
     "svelte-check": "^4.1.0",

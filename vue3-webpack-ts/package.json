@@ -18,6 +18,7 @@
     "babel-loader": "^9.2.1",
     "core-js": "^3.39.0",
     "css-loader": "^7.1.2",
+    "cypress": "https://cdn.cypress.io/beta/npm/14.0.0/darwin-arm64/develop-61f10424edb768447b2a70b7ecc362375ad71e2d/cypress.tgz",
     "html-webpack-plugin": "^5.6.3",
     "msw": "^2.6.2",
     "postcss": "^8.4.47",
