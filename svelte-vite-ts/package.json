@@ -1,5 +1,5 @@
 {
-  "name": "svelte-vite",
+  "name": "svelte-vite-ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,22 +7,25 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "cypress:run": "cypress run --config video=false --component"
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
+    "cypress:run": "cypress run --component"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.2",
-    "@tsconfig/svelte": "^2.0.1",
-    "autoprefixer": "^10.4.4",
-    "cypress": "^12.7.0",
-    "postcss": "^8.4.12",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.7",
-    "svelte-htm": "^1.1.1",
-    "svelte-preprocess": "^4.9.8",
-    "tailwindcss": "^3.0.24",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.4",
-    "vite": "^3.0.0"
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "autoprefixer": "^10.4.20",
+    "cypress": "^14.0.0",
+    "msw": "^2.6.6",
+    "svelte": "^5.6.2",
+    "svelte-check": "^4.1.0",
+    "tailwindcss": "^3.4.16",
+    "tslib": "^2.8.1",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

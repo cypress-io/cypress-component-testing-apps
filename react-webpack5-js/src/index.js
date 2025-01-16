@@ -4,12 +4,11 @@ import './index.css';
 import App from './App';
 import { worker } from './mocks';
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
+)
 
 // Start a mock API server to handle auth requests
 worker.start({
