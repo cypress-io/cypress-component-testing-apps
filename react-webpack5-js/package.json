@@ -28,7 +28,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "cypress": "https://cdn.cypress.io/beta/npm/14.0.0/darwin-arm64/develop-61f10424edb768447b2a70b7ecc362375ad71e2d/cypress.tgz",
+    "cypress": "^14.0.0",
     "msw": "^2.6.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

@@ -30,7 +30,7 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
     "autoprefixer": "^10.4.20",
-    "cypress": "https://cdn.cypress.io/beta/npm/14.0.0/darwin-arm64/develop-61f10424edb768447b2a70b7ecc362375ad71e2d/cypress.tgz",
+    "cypress": "^14.0.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
