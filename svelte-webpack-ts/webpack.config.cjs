@@ -9,7 +9,6 @@ module.exports = {
   },
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".svelte"],
-    // mainFields: ["svelte", "browser", "module", "main"],
   },
   output: {
     path: path.resolve(__dirname, "public/build"),

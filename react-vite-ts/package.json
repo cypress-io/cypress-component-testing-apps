@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "start": "vite --port 4200",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "cypress:run": "cypress run --component"
