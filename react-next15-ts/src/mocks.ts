@@ -1,6 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   http.post<{},{ username: string; password: string }>(
     '/auth',
     async ({ request }) => {

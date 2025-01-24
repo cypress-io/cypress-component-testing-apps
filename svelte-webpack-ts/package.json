@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack serve",
-    "start": "serve public --listen 8080",
+    "start": "webpack serve --port 4200",
     "validate": "svelte-check",
     "cypress:run": "cypress run --component"
   },

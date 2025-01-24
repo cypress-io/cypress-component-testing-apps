@@ -11,5 +11,5 @@
     "moduleDetection": "force",
     "types": ["cypress"] 
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "cypress.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "cypress.d.ts", "**/*.cy.ts"],
 }

@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import path from 'path';
+import path from "path";
 
 export default defineConfig({
   component: {
@@ -9,11 +9,16 @@ export default defineConfig({
       webpackConfig: {
         resolve: {
           alias: {
-            '@components': path.resolve(__dirname, './src/components'),
+            "@components": path.resolve(__dirname, "./src/components"),
           },
         },
-      }
+      },
     },
-    
+  },
+  e2e: {
+    supportFile: false,
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
   },
 });
