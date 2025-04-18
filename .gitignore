@@ -26,3 +26,7 @@ yarn-error.log*
 
 .vscode
 .DS_Store
+
+**/cypress/downloads/
+**/cypress/screenshots/
+**/cypress/videos/
