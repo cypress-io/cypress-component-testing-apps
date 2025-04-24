@@ -35,7 +35,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: .node-version
       - name: Cypress Component Tests
         uses: cypress-io/github-action@v6
         with:
