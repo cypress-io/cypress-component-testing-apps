@@ -5,6 +5,7 @@ export default defineConfig({
     devServer: {
       framework: "angular",
       bundler: "webpack",
+      webpackConfig: { stats: "errors-only" }, // see issue https://github.com/cypress-io/cypress/issues/26456
     },
     specPattern: "**/*.cy.ts",
   },
