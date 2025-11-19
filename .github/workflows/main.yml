@@ -18,8 +18,8 @@ jobs:
           [
             "angular",
             "angular-standalone",
-            "react-next14-ts",
             "react-next15-ts",
+            "react-next16-ts",
             "react-vite-ts",
             "react-webpack5-js",
             "svelte-vite-ts",

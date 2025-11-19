@@ -28,7 +28,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, title = 'Log In', errorM
   };
 
   return (
-    <div className="max-w-screen-sm p-12 mx-auto bg-gray-50 rounded-md shadow-lg">
+    <div className="max-w-(--breakpoint-sm) p-12 mx-auto bg-gray-50 rounded-md shadow-lg">
       <form className="flex flex-col" onSubmit={handleFormSubmit}>
         <fieldset>
           <legend className="text-3xl text-gray-800 mb-4">{title}</legend>

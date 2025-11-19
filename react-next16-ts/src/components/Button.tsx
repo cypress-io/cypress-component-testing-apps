@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = (props) => {
       className={`
               py-2
               px-6
-              rounded-sm
+              rounded-xs
               self-start      
               text-white
               bg-cy-blue

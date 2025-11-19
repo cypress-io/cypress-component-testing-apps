@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "tailwindcss";
 
 body {
   margin: 0;
@@ -7,6 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-cy-blue: #4956e3;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
