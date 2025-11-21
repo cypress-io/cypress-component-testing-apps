@@ -1,6 +1,6 @@
 import { signal } from '@angular/core';
 import { TestComponent } from './test-component.component';
-import { createOutputSpy } from 'cypress/angular';
+import { createOutputSpy } from '../../../cypress/support/angular-mount-playground';
 
 describe('TestComponent', () => {
   it('works with inferred generic type input<required>', () => {

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginService } from './login.service';
@@ -17,7 +17,7 @@ export class AppComponent {
   errorMessage = '';
   username = ''
 
-  constructor(private readonly loginService: LoginService) {}
+  constructor(private readonly loginService: LoginService, private ref: ChangeDetectorRef) {}
 
   handleLogin(username: string, password: string): void {
     this.errorMessage = '';
@@ -31,6 +31,8 @@ export class AppComponent {
       } else {
         this.errorMessage = response.message
       }
+      // force change detection to update the UI until we convert the values to signals
+      this.ref.markForCheck();
     })
   }
 

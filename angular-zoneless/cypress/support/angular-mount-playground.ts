@@ -1,15 +1,7 @@
-import 'zone.js'
-
-/**
- * @hack fixes "Mocha has already been patched with Zone" error.
- */
-// @ts-ignore
-window.Mocha['__zone_patch__'] = false
-import 'zone.js/testing'
-
 import { CommonModule } from '@angular/common'
 import { Component, ErrorHandler, EventEmitter, Injectable, SimpleChange, SimpleChanges, Type, OnChanges, Injector, InputSignal, WritableSignal } from '@angular/core'
 import { toObservable } from '@angular/core/rxjs-interop'
+import { provideZonelessChangeDetection } from '@angular/core'
 import {
   ComponentFixture,
   getTestBed,
@@ -18,9 +10,9 @@ import {
   TestComponentRenderer,
 } from '@angular/core/testing'
 import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting,
-} from '@angular/platform-browser-dynamic/testing'
+  BrowserTestingModule,
+  platformBrowserTesting
+} from '@angular/platform-browser/testing'
 import {
   setupHooks,
   getContainerEl,
@@ -162,6 +154,10 @@ function bootstrapModule<T> (
     useClass: CypressAngularErrorHandler,
   })
 
+  // allow for zoneless change detection inside the testing module.
+  // @see https://angular.dev/guide/zoneless#using-zoneless-in-testbed
+  testModuleMetaData.providers.push(provideZonelessChangeDetection())
+
   // check if the component is a standalone component
   if ((component as any).ɵcmp?.standalone) {
     testModuleMetaData.imports.push(component)
@@ -244,24 +240,17 @@ function createComponentFixture<T> (
  * @param {Type<T>} component Angular component being mounted
  * @param {MountConfig<T>} config MountConfig
 
- * @returns {ComponentFixture<T>} ComponentFixture
+ * @returns {Promise<ComponentFixture<T>>} ComponentFixture
  */
-function setupFixture<T> (
+async function setupFixture<T> (
   component: Type<T>,
   config: MountConfig<T>,
-): ComponentFixture<T> {
+): Promise<ComponentFixture<T>> {
   const fixture = getTestBed().createComponent(component)
 
   setupComponent(config, fixture)
 
-  fixture.whenStable().then(() => {
-    fixture.autoDetectChanges(config.autoDetectChanges ?? true)
-  }).catch((e) => {
-    // If this promise does not settle in Angular 19 it is rejected
-    // https://github.com/angular/angular/blob/main/CHANGELOG.md#1900-2024-11-19
-    // eslint-disable-next-line no-console
-    console.error(e)
-  })
+  await fixture.whenStable()
 
   return fixture
 }
@@ -529,22 +518,34 @@ export function mount<T> (
 
   const componentFixture = initTestBed(component, config)
 
-  activeFixture = setupFixture(componentFixture, config)
-
-  const mountResponse: MountResponse<T> = {
-    fixture: activeFixture,
-    component: activeFixture.componentInstance,
-  }
-
-  const logMessage = typeof component === 'string' ? 'Component' : componentFixture.name
-
-  Cypress.log({
-    name: 'mount',
-    message: logMessage,
-    consoleProps: () => ({ result: mountResponse }),
+  let mountResponsePromiseResolver: any
+  let mountResponsePromiseRejector: any
+  let mountResponsePromise: Promise<MountResponse<T>> = new Promise((resolve, reject) => {
+    mountResponsePromiseResolver = resolve
+    mountResponsePromiseRejector = reject
   })
 
-  return cy.wrap(mountResponse, { log: false })
+  setupFixture(componentFixture, config).then((fixture) => {
+    activeFixture = fixture
+    const mountResponse: MountResponse<T> = {
+      fixture: activeFixture,
+      component: activeFixture.componentInstance,
+    }
+  
+    const logMessage = typeof component === 'string' ? 'Component' : componentFixture.name
+  
+    Cypress.log({
+      name: 'mount',
+      message: logMessage,
+      consoleProps: () => ({ result: mountResponse }),
+    })
+
+    mountResponsePromiseResolver(mountResponse)
+  }).catch((error) => {
+    mountResponsePromiseRejector(error)
+  })
+
+  return cy.wrap(mountResponsePromise, { log: false })
 }
 
 /**
@@ -579,10 +580,9 @@ export const createOutputSpy = <T>(alias: string) => {
   return emitter as any
 }
 
-// Only needs to run once, we reset before each test
 getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(),
+  BrowserTestingModule,
+  platformBrowserTesting(),
   {
     teardown: { destroyAfterEach: false },
   },
