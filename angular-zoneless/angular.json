@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-21": {
+    "angular-zoneless": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-21:build:production"
+              "buildTarget": "angular-zoneless:build:production"
             },
             "development": {
-              "buildTarget": "angular-21:build:development"
+              "buildTarget": "angular-zoneless:build:development"
             }
           },
           "defaultConfiguration": "development"
