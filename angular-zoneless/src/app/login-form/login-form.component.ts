@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { Component, input, output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
-import { LoginService } from '../login.service';
 
 @Component({
   imports: [FormsModule, ButtonComponent, CommonModule],
@@ -10,8 +9,8 @@ import { LoginService } from '../login.service';
   templateUrl: './login-form.component.html',
 })
 export class LoginFormComponent {
-  @Input() errorMessage = ''
-  @Output() onLogin: EventEmitter<{ username: string, password: string }> = new EventEmitter()
+  errorMessage = input<string>('')
+  onLogin = output<{ username: string, password: string }>()
   username = ''
   password = ''
   submitted = false

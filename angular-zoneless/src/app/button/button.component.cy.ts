@@ -3,15 +3,13 @@ import { ButtonComponent } from './button.component';
 
 @Component({
   template: ` <app-button> Click Me </app-button> `,
-  standalone: false,
+  imports: [ButtonComponent],
 })
 class WrapperComponent {}
 
 describe('ButtonComponent', () => {
   it('can mount using WrapperComponent', () => {
-    cy.mount(WrapperComponent, {
-      imports: [ButtonComponent],
-    });
+    cy.mount(WrapperComponent);
     cy.get('button').contains('Click Me');
   });
 

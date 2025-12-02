@@ -13,7 +13,7 @@
                 <span *ngIf="submitted && !password" class="text-red-500 mt-2">Password is required</span>
             </label>
             <app-button type="submit">Login</app-button>
-            <div *ngIf="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</div>
+            <div *ngIf="errorMessage()" class="text-red-500 mt-2">{{ errorMessage() }}</div>
         </fieldset>
     </form>
 </div>

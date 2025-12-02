@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -7,6 +7,6 @@ import { ButtonComponent } from '../button/button.component';
   templateUrl: './welcome.component.html',
 })
 export class WelcomeComponent {
-  @Input() username = '';
-  @Output() onLogout = new EventEmitter();
+  username = input<string>('')
+  onLogout = output<void>()
 }
