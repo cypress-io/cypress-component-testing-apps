@@ -1,6 +1,6 @@
 {
   "name": "react-next16-ts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,21 +10,21 @@
     "cypress:run": "cypress run --component"
   },
   "dependencies": {
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "cypress": "^15.7.0",
-    "eslint": "^9",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "cypress": "^15.7.1",
+    "eslint": "^9.39.1",
     "eslint-config-next": "16.0.3",
-    "msw": "^2.10.5",
+    "msw": "^2.12.4",
     "tailwindcss": "^4.1.17",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
   "msw": {
     "workerDirectory": [
