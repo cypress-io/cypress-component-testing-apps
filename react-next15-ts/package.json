@@ -10,21 +10,21 @@
     "cypress:run": "cypress run --component"
   },
   "dependencies": {
-    "next": "^15.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "^15.5.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "cypress": "^15.0.0",
-    "eslint": "^8",
+    "@types/node": "^20.19.25",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "cypress": "^15.7.1",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.2.3",
-    "msw": "^2.10.5",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "msw": "^2.12.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3"
   },
   "msw": {
     "workerDirectory": [
