@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "msw": "^2.10.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "browserslist": [
     "defaults",
