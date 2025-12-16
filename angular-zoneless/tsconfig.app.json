@@ -6,7 +6,8 @@
     "outDir": "./out-tsc/app",
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "cypress/support/component.ts"
   ],
   "exclude": [
     "src/**/*.spec.ts",
