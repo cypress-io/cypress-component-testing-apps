@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": "^21.0.0",
     "@cypress/mount-utils": "^4.1.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "cypress": "https://cdn.cypress.io/beta/npm/15.8.0/darwin-arm64/feat/add_zoneless_angular_harness-1e24ba1c5667ba51f5d10fe840eadc28ff40cdd7/cypress.tgz",
+    "cypress": "^15.8.0",
     "jsdom": "^27.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
