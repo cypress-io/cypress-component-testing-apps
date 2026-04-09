@@ -4,7 +4,7 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,7 +13,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "noImplicitAny": false,
-    "baseUrl": ".",
+    "noUncheckedSideEffectImports": false,
     "lib": [
       "esnext",
       "dom",

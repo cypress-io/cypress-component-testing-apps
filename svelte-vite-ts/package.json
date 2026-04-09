@@ -11,17 +11,17 @@
     "cypress:run": "cypress run --component"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^6.1.2",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@tsconfig/svelte": "^5.0.4",
-    "cypress": "^15.0.0",
+    "cypress": "^15.14.0",
     "msw": "^2.10.5",
-    "svelte": "^5.38.1",
+    "svelte": "^5.55.2",
     "svelte-check": "^4.3.1",
     "tailwindcss": "^4.1.11",
     "tslib": "^2.8.1",
-    "typescript": "~5.8.3",
-    "vite": "^7.1.2"
+    "typescript": "^5.9.3",
+    "vite": "^8.0.8"
   },
   "msw": {
     "workerDirectory": [
