@@ -16,7 +16,6 @@ jobs:
       matrix:
         project:
           [
-            "angular-standalone",
             "angular-zoneless",
             "react-next15-ts",
             "react-next16-ts",
