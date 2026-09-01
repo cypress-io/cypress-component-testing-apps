@@ -14,7 +14,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@tsconfig/svelte": "^5.0.4",
-    "cypress": "https://cdn.cypress.io/beta/npm/16.0.0/linux-x64/release/16.0.0-3bcc0e1576ea6253d908bc1a9d328b34ad0aeaf1/cypress.tgz",
+    "cypress": "^16.0.0",
     "msw": "^2.10.5",
     "svelte": "^5.55.2",
     "svelte-check": "^4.3.1",
